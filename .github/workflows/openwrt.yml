@@ -10,14 +10,12 @@
 name: openwrt-pc
 
 on:
+  schedule:
+    - cron: 0 20 * * *
   push:
-    branches: 
-      - master
-  # schedule:
-  #   - cron: 0 20 * * *
-  # release:
-  #   types: [published]
-
+   branches: 
+     - master
+ 
 jobs:
 
   build:
