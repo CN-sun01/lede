@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: 小米mini
+name: 小米mini beta2
 
 on:
   push:
@@ -96,7 +96,7 @@ jobs:
           # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
           # 
 
-          # 编译x64固件:
+          # 编译xiaomi_miwifi-mini固件:
           cat >> .config <<EOF
           CONFIG_TARGET_ramips=y
           CONFIG_TARGET_ramips_mt7620=y
@@ -145,10 +145,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-wrtbwmon=y
-          CONFIG_PACKAGE_luci-app-flowoffload
-          CONFIG_PACKAGE_luci-app-sfe
-          CONFIG_PACKAGE_luci-app-wol
+          CONFIG_PACKAGE_luci-app-flowoffload=y
+          CONFIG_PACKAGE_luci-app-sfe=y
           EOF
 
           # LuCI主题:
